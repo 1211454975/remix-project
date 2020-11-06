@@ -39,7 +39,7 @@ export class ThemeModule extends Plugin {
     let currentTheme = this._deps.config.get('settings/theme')
     currentTheme = this.themes[currentTheme] ? currentTheme : null
     this.active = queryTheme || currentTheme || 'Dark'
-    this.forced = queryTheme !== undefined
+    this.forced = !!queryTheme
   }
 
   /** Return the active theme */
